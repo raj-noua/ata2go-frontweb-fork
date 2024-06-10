@@ -1,0 +1,44 @@
+.sub-category-style {
+    border: 1px solid grey;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    border-radius: 15px;
+    margin: 6px 8px;
+    display: inline-block;
+}
+.sub-category-style-s {
+    border: 1px solid grey;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    border-radius: 15px;
+    margin: 6px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+.sub-category-style-selected{
+    border: 1px solid grey;
+    background-color: black;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    border-radius: 15px;
+    margin: 6px 8px;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+}
+.sub-category-remove {
+    margin-left: 10px;
+    font-size: 24px;
+    color: rgb(223, 4, 4);
+    cursor: pointer;
+}
+
+.sub-category-remove:hover {
+    color: brown;
+}
+.sub-cat-div{
+    min-height: 140px;
+}

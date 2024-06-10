@@ -1,0 +1,59 @@
+@mixin font($fontFamily, $fontSize, $lineHeight, $fontWeight: normal, $fontStyle: normal) {
+    font-family: $fontFamily;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+}
+
+$breakpoints: (
+    "phone": 767px,
+    "phone-wide": 768px,
+    "phone-wider": 992px,
+    "tablet": 1024px,
+    "tablet-wide": 1194px,
+    "tablet-wider": 1366px,
+    "desktop": 1440px,
+    "desktop-wide": 1600px,
+    "desktop-wider": 1920px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    } @else {
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin ie {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin scroll-style($size: 10px, $thumb: none, $thumb-color: grey, $thumb-radius: 10px, $track-color: transparent, $track-radius: 10px) {
+    // Respaldo para Firefox
+    scrollbar-color: $thumb-color $track-color;
+    scrollbar-width: thin;
+
+    // Navegadores basados en webkit
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+        &-track {
+            background-color: $track-color;
+            border-radius: $track-radius;
+        }
+        &-thumb {
+            background-color: $thumb-color;
+            background-image: $thumb;
+            border-radius: $thumb-radius;
+        }
+    }
+}

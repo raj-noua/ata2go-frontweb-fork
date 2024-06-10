@@ -1,0 +1,20 @@
+@import "./variables";
+@import "./typography";
+@import "./mixins";
+
+@import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+// @import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+
+:root {
+    --theme-primary: #2148b8;
+    --theme-secondary: #5fba46;
+    --theme-darkColor: #191919;
+    --theme-grayColor: #4f4949;
+    --theme-lightBlueColor: #f3f6ff;
+    --theme-strokeColor: #3f555f;
+    --theme-placeHolderColor: #80949c;
+    --theme-lightGrayColor: #e3e3e3;
+    --theme-babyBlueColor: #d0f0ff;
+}

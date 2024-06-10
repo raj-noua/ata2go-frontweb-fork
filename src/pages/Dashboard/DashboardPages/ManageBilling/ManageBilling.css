@@ -1,0 +1,52 @@
+.input-wrapper > input {
+    display: block;
+    border: 2px solid var(--theme-grayColor);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 10px;
+    outline: 0;
+    border-radius: 5px;
+}
+.input-wrapper > label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filter-label span {
+    display: none !important;
+}
+
+.form-array-border {
+    border: 1px solid #333;
+    padding: 10px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #dee6ff;
+    /* overflow: hidden; */
+}
+
+.service-remove {
+    right: 0px;
+    position: absolute;
+    cursor: pointer;
+    padding: 5px;
+    top: 0px;
+    width: 25px;
+    height: 25px;
+    border-radius: 0px 8px 0px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.service-remove .close-btn {
+    color: #fff;
+    font-size: 20px;
+}
+
+.form-label {
+    color: #000;
+    font-size: 14px;
+}

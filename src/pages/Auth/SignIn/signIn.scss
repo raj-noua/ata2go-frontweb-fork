@@ -1,0 +1,16 @@
+.signInBtn {
+    background-color: #2148b8;
+    border: 1px solid #2148b8;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInBtn:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}

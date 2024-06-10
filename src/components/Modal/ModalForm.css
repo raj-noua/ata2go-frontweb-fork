@@ -1,0 +1,21 @@
+form {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+form label {
+  display: flex;
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+  color: #333;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,222 @@
+.video-page-title,
+.courses-page-title {
+    font-size: 18px;
+    color: #2148b8;
+    font-weight: 700;
+}
+.courses-page-title {
+    text-align: center;
+}
+.video-upload-container,
+.video-table-container {
+    padding: 30px 25px;
+    background-color: #fff;
+}
+.video-table-container {
+    margin-top: 20px;
+}
+
+/* .video-input-box {
+  width: 500px;
+} */
+
+.video-input-box label,
+.courses-input-box label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.video-input-box input,
+.courses-input-box input,
+textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 6px 15px;
+    outline: none;
+    border: 1px solid #ccd2da;
+    border-radius: 4px;
+    color: #333;
+}
+.video-input-box .input-button button,
+.courses-input-box .input-button button {
+    background: #2148b8;
+    border: none;
+    outline: none;
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+.video-input-box .input-button button {
+    padding: 8px 25px;
+}
+.courses-input-box .input-button button {
+    padding: 10px 30px;
+}
+.video-input-box .input-button button:hover,
+.courses-input-box .input-button button:hover {
+    background: #2e55d4;
+}
+
+.video-input-box-modal label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.video-input-box-modal input,
+textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 6px 15px;
+    outline: none;
+    border: 1px solid #ccd2da;
+    border-radius: 4px;
+    color: #333;
+}
+.video-input-box-modal .input-button button {
+    background: #2148b8;
+    border: none;
+    outline: none;
+    display: inline-block;
+    padding: 8px 25px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+.video-input-box-modal .input-button button:hover {
+    background: #2e55d4;
+}
+
+.table-data {
+    margin-top: 20px;
+}
+.extra-btn {
+    background: #2148b8;
+    border: none;
+    outline: none;
+    display: inline-block;
+    padding: 8px 25px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    transition: all 0.2s ease;
+}
+.service-details {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/* courses style  */
+
+.technology-courses-container {
+    padding: 30px 20px;
+    background-color: #fff;
+}
+.courses-title h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2e55d4;
+}
+
+@media (max-width: 576px) {
+    .video-input-box {
+        width: 100%;
+        overflow: hidden;
+    }
+    .video-table-container {
+        padding: 15px;
+        background-color: transparent;
+    }
+    .video-input-box input,
+    textarea {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 6px 15px;
+        outline: none;
+        border: 1px solid #ccd2da;
+        border-radius: 4px;
+        color: #333;
+    }
+}
+/* Tablet size  */
+@media (max-width: 769px) {
+    .video-input-box {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+/* user comment list */
+
+.video-comment-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.video-comment-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.video-comment-list li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.comment {
+    padding: 5px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5em;
+}
+.comment .user-imge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment .user-imge img {
+    width: 100%;
+    max-width: 32px;
+    height: auto;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.commentCount {
+    cursor: pointer;
+}
+
+.commentCount:hover {
+    color: var(--theme-primary);
+}
+
+.commentCount.noLink {
+    cursor: default !important;
+    pointer-events: none !important;
+}

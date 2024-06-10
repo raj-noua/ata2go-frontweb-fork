@@ -1,0 +1,22 @@
+// colors
+
+$primaryColor: #2148b8;
+$secondaryColor: #5fba46;
+$darkColor: #191919;
+$grayColor: #4f4949;
+$lightBlueColor: #f3f6ff;
+$strokeColor: #3f555f;
+$placeHolderColor: #80949c;
+$lightGrayColor: #e3e3e3;
+$babyBlueColor: #d0f0ff;
+
+$theme-colors: (
+    "dark": $darkColor,
+    "primary": $primaryColor,
+    "secondary": $secondaryColor
+);
+
+$input-placeholder-color: $placeHolderColor;
+$table-striped-color: $lightBlueColor;
+$table-striped-bg: $lightBlueColor;
+$table-bg: #ffffff;

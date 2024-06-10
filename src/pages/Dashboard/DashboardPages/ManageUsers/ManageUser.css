@@ -1,0 +1,53 @@
+.input-wrapper > input {
+    display: block;
+    border: 2px solid grey;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 10px;
+    outline: 0;
+    border-radius: 5px;
+}
+.input-wrapper > label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+.disabled-style {
+    background-color: grey; /* Ensures visibility of the disabled state */
+    cursor: not-allowed; /* Changes cursor to indicate non-interactivity */
+}
+
+.action-icon.delete {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+}
+
+.action-icon.delete.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.action-icon {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s ease;  
+    background-color: blue;  /* Default active background */
+    color: white;  /* Ensuring text/icon color contrasts well with the background */
+}
+
+
+.action-icon.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.custom-modal-width .modal-dialog {
+    max-width: 100px; /* Set your desired width */
+}

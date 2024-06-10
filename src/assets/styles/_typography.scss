@@ -1,0 +1,12 @@
+@use "../fonts/Lexend/stylesheet.css";
+@use "../fonts/OpenSans/opensans-stylesheet.css";
+
+$fontLexend: "Lexend";
+$fontOpenSans: "Open Sans";
+
+.fontLexend {
+    font-family: #{$fontLexend} !important;
+}
+.fontOpenSans {
+    font-family: #{$fontOpenSans} !important;
+}

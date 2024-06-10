@@ -1,0 +1,298 @@
+.container-dashboard {
+    display: flex;
+    height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
+}
+
+.main-dashboard {
+    width: 100%;
+    overflow-y: scroll;
+    background-color: #efefef;
+}
+
+/* width */
+.main-dashboard::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Track */
+.main-dashboard::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.main-dashboard::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.main-dashboard::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.sidebar {
+    background: #fff;
+    color: #41505f;
+    height: 100vh;
+    max-height: 100%;
+    width: 700px;
+    border-right: 2px solid #f8f9fc;
+    transition: all 0.5s;
+}
+
+/* Specific sidebar open/closed styles */
+.sidebar.open {
+    width: 220px; /* Open state width */
+}
+
+.sidebar.collapsed {
+    width: 70px; /* Collapsed state width */
+}
+
+/* dashboard navbar   */
+.main-dashboard-container {
+    padding: 20px;
+    padding-top: 85px;
+}
+
+.dashboard-navbar {
+    background-color: #fff;
+    width: 100%;
+    border-bottom: 2px solid #f8f9fc;
+    padding: 16px 26px;
+    position: fixed;
+    z-index: 1;
+}
+
+.dashboard-profile-image {
+    position: relative;
+    right: 0;
+}
+
+.dashboard-profile-image .profile-image {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active-sign {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #0cb785;
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+}
+
+.notification {
+    font-size: 24px;
+    line-height: 1.4;
+    color: #41505f;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.top_section {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    justify-content: space-between;
+    padding-right: 40px;
+    border-bottom: 3px solid #f8f9fc;
+}
+
+.search-bar {
+    width: 320px;
+    position: relative;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #eef4fa;
+    padding: 7px 10px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-bar input {
+    display: block;
+    width: 100%;
+    padding: 0.406rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #41505f;
+    outline: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccd2da;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition:
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.logo {
+    width: 40px;
+    margin-left: 15px;
+}
+
+.bars {
+    display: flex;
+    font-size: 20px;
+    margin-left: 50px;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.dashboard-link {
+    display: flex;
+    color: #41505f;
+    padding: 15px 15px;
+    padding-left: 30px;
+    gap: 15px;
+    font-size: 16px;
+    transition: all 0.5s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dashboard-link-last {
+    display: flex;
+    color: #41505f;
+    padding: 15px 15px;
+    /* padding-left: 30px; */
+    gap: 15px;
+    font-size: 16px;
+    transition: all 0.5s;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: auto; /* To push the logout button to the bottom of the sidebar */
+}
+
+.dashboard-link.active {
+    background-color: #2148b8;
+    color: white;
+}
+
+.icon,
+.link_text {
+    font-size: 16px;
+}
+
+.action-icon {
+    font-size: 16px;
+    padding: 3px 6px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.video-column {
+    width: 110px;
+}
+
+.action-icon.update {
+    background-color: #4070f4;
+    color: #fff;
+    width: auto;
+}
+
+.action-icon.update:hover {
+    background-color: lightskyblue;
+    color: #111;
+}
+
+.action-icon.delete {
+    background-color: #ff0040;
+    color: #fff;
+    margin-left: 15px;
+}
+
+.action-icon.delete:hover {
+    background-color: lightskyblue;
+    color: #111;
+}
+
+/* responsive css  */
+@media (max-width: 576px) {
+    .sidebar {
+        padding-left: 8px;
+    }
+
+    .sidebar.collapsed {
+        width: 50px; /* Smaller width for ultra-small devices */
+        padding-left: 0;
+    }
+
+    .sidebar.open {
+        width: 180px; /* Adjusted width for better usability on small devices */
+        padding-left: 0px !important;
+    }
+    .top_section {
+        padding: 20px 0;
+    }
+
+    .dashboard-link {
+        padding: 10px;
+    }
+
+    .sidebar.collapsed .dashboard-link {
+        /* justify-content: center !important; */
+        padding-left: 18px;
+    }
+
+    .sidebar {
+        max-width: 196px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .bars {
+        /* padding-left: 20px; */
+        padding-right: 20px;
+    }
+
+    .dashboard-navbar {
+        padding: 12px 16px;
+    }
+
+    .notification {
+        font-size: 24px;
+        line-height: 1.4;
+        color: #41505f;
+        margin-right: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .search-bar {
+        width: 180px;
+    }
+
+    .main-dashboard-container {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-dashboard-container {
+        padding: 15px;
+        padding-top: 85px;
+    }
+}

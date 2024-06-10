@@ -1,0 +1,213 @@
+@import "./assets/styles/custom.scss";
+@import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+
+html {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include scroll-style(
+        $size: var(--scroll-size, 4px),
+        $thumb: var(--scroll-thumb, none),
+        $thumb-color: var(--scroll-thumb-color, #808080),
+        // rgba(95, 186, 70, 1)
+        $thumb-radius: var(--scroll-thumb-radius, var(--scroll-radius)),
+        $track-color: var(--scroll-track, #15161a),
+        $track-radius: var(--scroll-track-radius, var(--scroll-radius))
+    );
+}
+
+html,
+body {
+    font-family: $fontLexend;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+
+    a {
+        text-decoration: none !important;
+    }
+}
+
+@keyframes scrollDownMove {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.loader-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    background-image: url("./assets/images/bannerBgImage.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        // border: 6px solid #2148b8;
+        border-top: 3px solid #5fba46;
+        border-bottom: 3px solid #5fba46;
+        border-left: 3px solid #2148b8;
+        border-right: 3px solid #2148b8;
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        padding: 10px;
+        animation: spin 2s linear infinite;
+
+        @keyframes spin {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.02) rotate(180deg);
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+    }
+
+    .logoBox {
+        background-color: #f3f6ff;
+        padding: 10px;
+        width: 140px;
+        height: 140px;
+        border-radius: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 80%;
+            height: auto;
+            animation: popinout 2s linear infinite;
+
+            @keyframes popinout {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.offcanvas.offcanvas-end {
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: linear-gradient(90deg, rgba(33, 72, 184, 0.2), rgba(95, 186, 70, 0.2));
+    backdrop-filter: blur(10px);
+    max-width: 100%;
+
+    .btn-close {
+        color: #ffffff;
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        align-self: flex-start;
+    }
+
+    .offcanvas-body {
+        .navbar-nav {
+            height: 100%;
+
+            .menu.profileMenu {
+                display: none;
+            }
+            .menu.servicesMenu {
+                ul {
+                    left: -50%;
+                    gap: 0px;
+
+                    li {
+                        box-shadow: unset !important;
+                        border-radius: unset !important;
+                    }
+                }
+            }
+        }
+    }
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}
+.desktop_only {
+    @media only screen and (max-width: 767.98px) {
+        display: none;
+    }
+}
+.mobile_only {
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.signInBtn {
+    background-color: #2148b8;
+    border: 1px solid #2148b8;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.react-bootstrap-table table {
+    table-layout: auto !important;
+}
+
+.modal-content {
+    background-color: #fff !important;
+}
+
+.recaptcha-field {
+    @media only screen and (max-width: 768px) {
+        max-width: 250px !important;
+        overflow: auto;
+        width: 100% !important;
+    }
+    margin: auto;
+
+    // display: none !important;
+}
+
+td.selection-cell {
+    padding: 15px;
+
+    input[type="radio"] {
+        margin: 0 !important;
+    }
+}

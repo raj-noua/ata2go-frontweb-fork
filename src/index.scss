@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-color-type: black !important;
+    --bs-table-bg-type: var(--bs-table-striped-bg);
+}
+
+.success-button {
+    background-color: #2148b8 !important;
+    color: white !important;
+}
+.danger-btn {
+    background-color: red !important;
+    color: white !important;
+}
+.cVZKmU {
+    opacity: 1 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    transform: none !important;
+}
+.kVVcZU{
+    overflow-y: hidden !important;
+}
+@media screen and (max-width: "576px") {
+    .ldluvA {
+        padding: 10px !important;
+    }
+    .bKHscQ {
+        padding: 20px !important;
+        padding-top: 107px !important;
+    }
+    .dkVOiG {
+        padding: 10px !important;
+    }
+    .dkVOiG {
+        padding: 20px !important;
+        padding-top: 107px !important;
+    }
+}

@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-Thin.eot");
+    src:
+        url("Lexend-Thin.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-Thin.woff2") format("woff2"),
+        url("Lexend-Thin.woff") format("woff"),
+        url("Lexend-Thin.ttf") format("truetype"),
+        url("Lexend-Thin.svg#Lexend-Thin") format("svg");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-ExtraLight.eot");
+    src:
+        url("Lexend-ExtraLight.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-ExtraLight.woff2") format("woff2"),
+        url("Lexend-ExtraLight.woff") format("woff"),
+        url("Lexend-ExtraLight.ttf") format("truetype"),
+        url("Lexend-ExtraLight.svg#Lexend-ExtraLight") format("svg");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-Light.eot");
+    src:
+        url("Lexend-Light.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-Light.woff2") format("woff2"),
+        url("Lexend-Light.woff") format("woff"),
+        url("Lexend-Light.ttf") format("truetype"),
+        url("Lexend-Light.svg#Lexend-Light") format("svg");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-Regular.eot");
+    src:
+        url("Lexend-Regular.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-Regular.woff2") format("woff2"),
+        url("Lexend-Regular.woff") format("woff"),
+        url("Lexend-Regular.ttf") format("truetype"),
+        url("Lexend-Regular.svg#Lexend-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-Medium.eot");
+    src:
+        url("Lexend-Medium.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-Medium.woff2") format("woff2"),
+        url("Lexend-Medium.woff") format("woff"),
+        url("Lexend-Medium.ttf") format("truetype"),
+        url("Lexend-Medium.svg#Lexend-Medium") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-SemiBold.eot");
+    src:
+        url("Lexend-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-SemiBold.woff2") format("woff2"),
+        url("Lexend-SemiBold.woff") format("woff"),
+        url("Lexend-SemiBold.ttf") format("truetype"),
+        url("Lexend-SemiBold.svg#Lexend-SemiBold") format("svg");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-Bold.eot");
+    src:
+        url("Lexend-Bold.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-Bold.woff2") format("woff2"),
+        url("Lexend-Bold.woff") format("woff"),
+        url("Lexend-Bold.ttf") format("truetype"),
+        url("Lexend-Bold.svg#Lexend-Bold") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-ExtraBold.eot");
+    src:
+        url("Lexend-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-ExtraBold.woff2") format("woff2"),
+        url("Lexend-ExtraBold.woff") format("woff"),
+        url("Lexend-ExtraBold.ttf") format("truetype"),
+        url("Lexend-ExtraBold.svg#Lexend-ExtraBold") format("svg");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lexend";
+    src: url("Lexend-Black.eot");
+    src:
+        url("Lexend-Black.eot?#iefix") format("embedded-opentype"),
+        url("Lexend-Black.woff2") format("woff2"),
+        url("Lexend-Black.woff") format("woff"),
+        url("Lexend-Black.ttf") format("truetype"),
+        url("Lexend-Black.svg#Lexend-Black") format("svg");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
