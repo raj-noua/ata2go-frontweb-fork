@@ -17,6 +17,7 @@ import { UserContext }                              from "../../../../App";
 import { staggerVariants, tileVariants }            from "../../../../utils/FmVariants";
 import { captchaKey }                               from "../../../../utils/constants";
 import { SVGImages }                                from "../../../../config/images";
+// import { useGetLastLoginQuery }                     from "../../../../services/userApi";
 import {
     /* useDeleteUserMutation,
     useDeleteUsersMutation, */
@@ -200,6 +201,12 @@ const ManageUser = ({ show, handleClose }) => {
             text: "Role",
             sort: true,
             filter: textFilter(),
+        },
+        showAdvanced &&  {
+            dataField: "lastLoginTime",
+            text: "LastLogin",  // New column
+            sort: true,
+            formatter: (cell) => momentFormatter(cell, STG_DateTime_Format)
         },
         showAdvanced && {
             dataField: "_id",
@@ -496,6 +503,7 @@ const ManageUser = ({ show, handleClose }) => {
         setSelectedAuthenticatorStatus(value === 'SelectStatus' ? null : value === 'true');
     };
 
+    // const { data: dataLogins } = useGetLastLoginQuery(user?._id);
 
     return (
         <div>

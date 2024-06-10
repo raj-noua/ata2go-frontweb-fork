@@ -1,7 +1,17 @@
-import { BoldContent, TabContentContainer, TabTitle, TextContent }  from "../../../Tabs/tabContentStyle";
-import { CarPartsInnerContent }                                     from "./carPartsStyle";
+import { useNavigate }          from "react-router-dom";
+import { useContext }           from "react";
+import { UserContext }          from "../../../../App";
+import { CarPartsInnerContent,
+         RestrictionText,
+         PartsOrderButton }                                     from "./carPartsStyle";
+import { BoldContent, 
+         TabContentContainer, 
+         TabTitle, 
+         TextContent }  from "../../../Tabs/tabContentStyle";
 
 const SvcPartsAuto = ({ tabLabel, sectionID }) => {
+    const navigator = useNavigate();
+    const { user } = useContext(UserContext);
     return (
         <TabContentContainer id={sectionID} className="pt-0">
             <CarPartsInnerContent>
@@ -28,6 +38,10 @@ const SvcPartsAuto = ({ tabLabel, sectionID }) => {
                     passed directly to you. This means you get high-quality parts at lower costs, maximizing your investment in your
                     vehicle.`}
                     </p>
+                    <PartsOrderButton variant="secondary" disabled={!user?._id} onClick={() => navigator("/subscriptions?tab=parts-order")}>
+                        Select Parts Order
+                    </PartsOrderButton>
+                    {!user?._id && <RestrictionText>Please Login to Order Parts!</RestrictionText>}
                 </TextContent>
             </CarPartsInnerContent>
         </TabContentContainer>

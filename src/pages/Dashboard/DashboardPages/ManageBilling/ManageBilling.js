@@ -279,7 +279,7 @@ const ManageBilling = ({ show, handleClose }) => {
                 member: tempMember,
                 createDate: row.date,
                 dueDate: row.dueDate.split("T")[0],
-                payment: "",
+                payment: '',
             };
             setFormData(newData);
             setRemainingTotal(row.balance);
@@ -342,9 +342,7 @@ const ManageBilling = ({ show, handleClose }) => {
 
     const fullAddress = user => {
         if (user !== undefined) {
-            if (user[0].address && user[0].city) {
-                return (user[0].address ? user[0].address : "") + ", " + (user[0].city ? user[0].city : "");
-            }
+            return user[0].address + ", " + user[0].city;
         } else {
             return "";
         }
@@ -524,10 +522,10 @@ const ManageBilling = ({ show, handleClose }) => {
     };
 
     const getPayment = data => {
-        if (data.balance === 0.0) {
-            return data.totalPrice;
+        if (data.balance === 0.00) {
+            return data.totalPrice
         } else {
-            return data.totalPrice - data.balance;
+            return data.totalPrice - data.balance
         }
     };
 
@@ -810,7 +808,8 @@ const ManageBilling = ({ show, handleClose }) => {
                                         variants={tileVariants}
                                         variant="primary"
                                         className="mt-3"
-                                        onClick={() => setError("Please fill the captcha!")}>
+                                        onClick={() => setError("Please fill the captcha!")}
+                                    >
                                         <span>Create</span>
                                     </FormButton>
                                 )}

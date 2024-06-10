@@ -52,6 +52,7 @@ const ManageUser = ({ show, handleShow, handleClose }) => {
         <thead>
           <tr>
             <th>User ID</th>
+            <th>LastLogin</th> {/* New column */}
             <th>First Name</th>
             <th>Last Name</th>
             <th>Phone No</th>
@@ -76,6 +77,7 @@ const ManageUser = ({ show, handleShow, handleClose }) => {
                   ?.toString()
                   .slice(data?._id.length - 7, data?._id.length)}
               </td>
+              <td>{moment(data?.lastLoginTime).format("YYYY-MM-DD HH:mm:ss")}</td> {/* New column data */}
               <td>{data.firstName}</td>
               <td>{data.lastName}</td>
               <td>{data.phoneNo}</td>

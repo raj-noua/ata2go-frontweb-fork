@@ -1,53 +1,59 @@
-import { AnimatePresence, motion }  from "framer-motion";
-import { useEffect, useState }      from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useLocation, NavLink } from "react-router-dom";
+import MyInterests from '../Interests'; // Adjust the path accordingly
+import PartsOrder from '../PartsOrders'; // Adjust the path accordingly
+import Internet from '../Internet';
+import Learning from '../Learning';
+import MyPromo from '../Promo';
+import PartsQuotes from '../PartsQuotes';
 import { 
     TabComponentWrapper, 
     TabContentBox, 
     TabNavItem, 
     TabNavList, 
     TabNavHeader
-}                                   from "./SubscriptionsTabsStyle";
+} from "./SubscriptionsTabsStyle";
+
+// Mapping of tab IDs to query parameters
+const tabMapping = {
+    'my-interests': 'My Interests',
+    'my-promo': 'My Promo',
+    'internet': 'Internet',
+    'learning': 'Learning',
+    'parts-order': 'Parts Order',
+    'parts-quotes': 'Parts Quotes',
+};
 
 const SubscriptionsTabs = ({ tabs, user, refetch, setRefetch }) => {
-    const [selectedTab, setSelectedTab] = useState(tabs[0]);
+    const location = useLocation();
+    const [activeTab, setActiveTab] = useState('my-interests'); // default tab
 
     useEffect(() => {
-        setTimeout(() => {
-            tabChangeFn();
-        }, 500);
-    }, []);
-
-    const tabChangeFn = () => {
-        const sliderEle = document.querySelector("#Subscriptions .slider");
-        const tabEle = document.querySelector("#Subscriptions .TabNavItem.selected");
-
-        if (sliderEle && tabEle) {
-            sliderEle.style.left = `${tabEle.offsetLeft}px`;
-            sliderEle.style.width = `${tabEle.clientWidth}px`;
+        const query = new URLSearchParams(location.search);
+        const tab = query.get('tab');
+        if (tab) {
+            setActiveTab(tab);
         }
-    };
+    }, [location.search]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            tabChangeFn();
-        }, 50);
-    }, [selectedTab]);
-
-    const onTabChangeHandler = newTab => {
-        setSelectedTab(newTab);
+    const handleTabChange = (tabName) => {
+        setActiveTab(tabName);
     };
 
     return (
         <TabComponentWrapper id="Subscriptions">
             <TabNavHeader>
-                <TabNavList selectedid={selectedTab.id} tabcount={tabs.length}>
-                    {tabs.map(item => (
+                <TabNavList selectedid={activeTab} tabcount={tabs.length}>
+                    {Object.keys(tabMapping).map((tabKey) => (
                         <TabNavItem
-                            key={item.label}
-                            className={item === selectedTab ? "TabNavItem selected" : "TabNavItem"}
-                            onClick={() => onTabChangeHandler(item)}
+                            key={tabKey}
+                            className={tabKey === activeTab ? "TabNavItem selected" : "TabNavItem"}
+                            onClick={() => handleTabChange(tabKey)}
                         >
-                            <span>{`${item.label}`}</span>
+                            <NavLink to={`/subscriptions?tab=${tabKey}`}>
+                                <span>{tabMapping[tabKey]}</span>
+                            </NavLink>
                         </TabNavItem>
                     ))}
                     <div className="slider">
@@ -55,20 +61,23 @@ const SubscriptionsTabs = ({ tabs, user, refetch, setRefetch }) => {
                     </div>
                 </TabNavList>
             </TabNavHeader>
+
             <TabContentBox>
                 <AnimatePresence mode="wait">
                     <motion.div
-                        key={selectedTab ? selectedTab.label : "empty"}
+                        key={activeTab}
                         initial={{ y: 10, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -10, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {selectedTab ? (
-                            <selectedTab.content user={user} refetch={refetch} setRefetch={setRefetch} tabLabel={selectedTab.label} />
-                        ) : (
-                            "😋"
-                        )}
+                        {activeTab === 'my-interests' && <MyInterests user={user} refetch={refetch} setRefetch={setRefetch} />}
+                        {activeTab === 'my-promo' && <MyPromo user={user} refetch={refetch} setRefetch={setRefetch} />}
+                        {activeTab === 'internet' && <Internet user={user} refetch={refetch} setRefetch={setRefetch} />}
+                        {activeTab === 'learning' && <Learning user={user} refetch={refetch} setRefetch={setRefetch} />}
+                        {activeTab === 'parts-order' && <PartsOrder user={user} refetch={refetch} setRefetch={setRefetch} />}
+                        {activeTab === 'parts-quotes' && <PartsQuotes user={user} refetch={refetch} setRefetch={setRefetch} />}
+                        {/* Add more tab components here based on their respective activeTab values */}
                     </motion.div>
                 </AnimatePresence>
             </TabContentBox>

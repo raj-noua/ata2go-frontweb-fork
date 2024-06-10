@@ -1,12 +1,19 @@
+import { useNavigate }          from "react-router-dom";
+import { useContext }           from "react";
+import { UserContext }          from "../../../../App";
 import { CoursesBox }                                               from "./technologyCoursesStyle";
 import CoursePlan                                                   from "./CoursePlan";
-import { BoldContent, TabContentContainer, TabTitle, TextContent }  from "../../../Tabs/tabContentStyle";
+import { BoldContent, TabContentContainer, TabTitle, TextContent,
+         OrderButton,
+         RestrictionText }                                          from "../../../Tabs/tabContentStyle";
 import { useGetAllCoursesQuery }                                    from "../../../../services/courseApi";
 import CardSlider                                                   from "../../../../components/UI/CardSlider";
 
 
 
 const SvcLearning = ({ tabLabel, sectionID }) => {
+    const navigator = useNavigate();
+    const { user } = useContext(UserContext);
     const { data } = useGetAllCoursesQuery();
     const settings = {
         className: "slider center variable-width",
@@ -67,6 +74,10 @@ const SvcLearning = ({ tabLabel, sectionID }) => {
                     </CardSlider>
                 )}
             </CoursesBox>
+            <OrderButton variant="secondary" disabled={!user?._id} onClick={() => navigator("/subscriptions?tab=learning")}>
+                My Learning Program
+            </OrderButton>
+            {!user?._id && <RestrictionText>Login to Order Learning Program!</RestrictionText>}
         </TabContentContainer>
     );
 };

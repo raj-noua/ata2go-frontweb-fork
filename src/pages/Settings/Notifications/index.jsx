@@ -70,7 +70,7 @@ const SetNotifications = ({ user }) => {
     };
 
     const handleSave = () => {
-        addNotifications({ userId: user?._id, data: notif }).then(res => {
+        addNotifications({ userId: user?._id, ...notif }).then(res => {
             if (res?.data?.status) {
                 toast.success(res?.data?.message);
             } else {

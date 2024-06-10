@@ -27,8 +27,11 @@ const SvcMarketing = ({ tabLabel, sectionID }) => {
                         <Col sm={12} md={6} lg={5}>
                             <VideoButtonBox>
                                 <MarketingTitle>Affiliate {tabLabel}</MarketingTitle>
-                                <VideoButton variant="secondary" disabled={!user?._id} onClick={() => navigator("/videos")}>
-                                    Videos
+                                <VideoButton variant="secondary" disabled={!user?._id} onClick={() => navigator("/videos")}  style={{ marginBottom: '20px' }}>
+                                    View My Promos
+                                </VideoButton>
+                                <VideoButton variant="secondary" disabled={!user?._id} onClick={() => navigator("/subscriptions")}>
+                                    Select My Interests
                                 </VideoButton>
                                 {!user?._id && <RestrictionText>Please Login to see the videos!</RestrictionText>}
                             </VideoButtonBox>

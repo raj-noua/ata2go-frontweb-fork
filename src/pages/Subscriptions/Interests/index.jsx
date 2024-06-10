@@ -120,6 +120,8 @@ const SubsInterests = ({ user }) => {
                                         isCategoryBox={true}
                                         checked={selectedCat?.includes(concatenatedProduct)}
                                         onChange={() => handleSelectCat(concatenatedProduct)}
+                                        id={concatenatedProduct} // Added id attribute
+                                        name={concatenatedProduct} // Added name attribute
                                     >
                                         <CategoryText>{product}</CategoryText>
                                     </LabelCheckBox>

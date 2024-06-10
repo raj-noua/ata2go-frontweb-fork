@@ -1,3 +1,4 @@
+import { Button }    from "react-bootstrap";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Colors } from "../../config/colors";
@@ -135,4 +136,25 @@ export const FormCheckField = styled(motion.div)`
         align-items: center;
         color: #ffffff;
     }
+`;
+
+
+export const OrderButton = styled(Button)`
+    padding: 12px 26px;
+
+    width: 100%;
+    max-width: 406px;
+    border-radius: 8px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    color: #ffffff;
+`;
+
+export const RestrictionText = styled.p`
+    color: #ff3333 !important;
+    margin-top: 30px;
 `;
