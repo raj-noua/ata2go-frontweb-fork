@@ -1,20 +1,19 @@
-import React, { useContext, useState }  from "react";
-import Table                            from "react-bootstrap/Table";
-import { BiSolidPencil }                from "react-icons/bi";
-import { MdDelete }                     from "react-icons/md";
-import ModalBody                        from "../../../components/Modal/Modal";
+import React, { useContext, useState } from "react";
+import Table from "react-bootstrap/Table";
+import { BiSolidPencil } from "react-icons/bi";
+import { MdDelete } from "react-icons/md";
+import ModalBody from "../../../components/Modal/Modal";
 import {
-  useDeleteUserMutation,
   useGetAllUsersQuery,
   useUpdateUserMutation,
-}                                       from "../../../services/userApi";
-import { toast }                        from "react-toastify";
-import { Button, Form, Modal }          from "react-bootstrap";
-import { UserContext }                  from "../../../App";
+} from "../../../services/userApi";
+import { handleDeleteUser } from "../../../services/userApi";
+import { toast } from "react-toastify";
+import { Button, Form, Modal } from "react-bootstrap";
+import { UserContext } from "../../../App";
 
 const ManageUser = ({ show, handleShow, handleClose }) => {
   const { data, loading } = useGetAllUsersQuery();
-  const [deleteUser] = useDeleteUserMutation();
   const [updateUser] = useUpdateUserMutation();
   const [roleModal, setRoleModal] = useState(false);
   const [selected, setSelected] = useState({});
@@ -26,7 +25,7 @@ const ManageUser = ({ show, handleShow, handleClose }) => {
     updateUser({ id: id, data: { role: role } }).then((res) => {
       if (res?.data?.status) {
         setRoleModal(false);
-        setRefetch(refetch+1)
+        setRefetch(refetch + 1)
         toast.success(res?.data?.message);
       } else {
         toast.error(res?.data?.message);
@@ -34,15 +33,15 @@ const ManageUser = ({ show, handleShow, handleClose }) => {
     });
   };
 
-  const handleDeleteUser = (id) => {
-    deleteUser(id).then((res) => {
-      if (res?.data?.status) {
-        toast.success(res?.data?.message);
-        setDeleteModal(false);
-      } else {
-        toast.error(res?.data?.message);
-      }
-    });
+  const handleDeleteUser = async (id) => {
+    const response = await handleDeleteUser(id);
+
+    if (res?.data?.status) {
+      toast.success(res?.data?.message);
+      setDeleteModal(false);
+    } else {
+      toast.error(res?.data?.message);
+    }
   };
   return (
     <div>
@@ -91,7 +90,7 @@ const ManageUser = ({ show, handleShow, handleClose }) => {
               <td>
                 <div className="d-flex align-items-center justify-content-center gx-4">
                   {user?.role === "admin" ||
-                  user?.role === "power" ? (
+                    user?.role === "power" ? (
                     <span
                       className="action-icon update"
                       onClick={() => {
@@ -104,7 +103,7 @@ const ManageUser = ({ show, handleShow, handleClose }) => {
                       <span className="ms-2">Assign Role</span>
                     </span>
                   ) : (
-                    <span className="action-icon update" style={{background: 'grey'}}>
+                    <span className="action-icon update" style={{ background: 'grey' }}>
                       <BiSolidPencil />
                       <span className="ms-2">Assign Role</span>
                     </span>

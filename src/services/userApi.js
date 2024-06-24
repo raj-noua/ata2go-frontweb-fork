@@ -1,5 +1,115 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseUrl }                   from "./api";
+import { baseUrl, http } from "./api";
+
+export const handleGetAllUsers = async () => {
+    const response = await http.get(URLs.getAllUsers);
+    return response.data;
+};
+
+export const handleGetLastLogin = async (id) => {
+    const response = await http.get(URLs.getLastLogin(id));
+    return response.data;
+};
+
+export const handleGetUserById = async (id) => {
+    const response = await http.get(URLs.getUserById(id));
+    return response.data;
+};
+
+export const handleReSendEmailVerify = async (data) => {
+    const response = await http.patch(URLs.ReSendEmailVerify, data);
+    return response.data;
+};
+
+export const handleReSendPassVerify = async (data) => {
+    const response = await http.patch(URLs.ReSendPassVerify, data);
+    return response.data;
+};
+
+export const handleTwoFaByAdmin = async (payload) => {
+    const response = await http.patch(URLs.twoFaByAdmin, payload);
+    return response.data;
+};
+
+export const handleUpdatePassUser = async (payload) => {
+    const response = await http.patch(URLs.updatePassUser(payload), payload.data);
+    return response.data;
+};
+
+export const handleUpdateUser = async (payload) => {
+    const response = await http.patch(URLs.updateUser(payload), payload.data);
+    return response.data;
+};
+
+export const handleUpdateUserInfo = async (payload) => {
+    const response = await http.patch(URLs.updateUserInfo, payload);
+    return response.data;
+};
+
+export const handleUpdateUsers = async (payload) => {
+    const response = await http.patch(URLs.updateUsers, payload);
+    return response.data;
+};
+
+export const handleDeleteUser = async (id) => {
+    const response = await http.delete(URLs.deleteUser(id));
+    return response.data;
+};
+
+export const handleUsersDelete = async (payload) => {
+    const response = await http.delete(URLs.usersDelete, { data: payload });
+    return response.data;
+};
+
+export const handleDeleteUsers = async (payload) => {
+    const response = await http.post(URLs.deleteUsers, payload);
+    return response.data;
+};
+
+export const handleSendCode = async (data) => {
+    const response = await http.post(URLs.sendCode, data);
+    return response.data;
+};
+
+export const handleSendSupport = async (data) => {
+    const response = await http.post(URLs.sendSupport, data);
+    return response.data;
+};
+
+export const handleSendTwoFactor = async (data) => {
+    const response = await http.post(URLs.sendTwoFactor, data);
+    return response.data;
+};
+
+export const handleSignin = async (data) => {
+    const response = await http.post(URLs.signin, data);
+    return response.data;
+};
+
+export const handleSignup = async (data) => {
+    const response = await http.post(URLs.signup, data);
+    return response.data;
+};
+
+export const handleVerifyCode = async (data) => {
+    const response = await http.post(URLs.verifyCode, data);
+    return response.data;
+};
+
+export const handleVerifyEmail = async (data) => {
+    const response = await http.post(URLs.verifyEmail, data);
+    return response.data;
+};
+
+export const handleVerifyTwoFaCode = async (data) => {
+    const response = await http.post(URLs.verifyTwoFaCode, data);
+    return response.data;
+};
+
+export const handleVerifyTwoFaMethod = async (data) => {
+    const response = await http.post(URLs.verifyTwoFaMethod, data);
+    return response.data;
+};
 
 const getTokenFromLocalStorage = () => {
     return localStorage.getItem("token");
